@@ -1,63 +1,63 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_viewmodel.dart';
+part of 'home_viewmodel.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-@ProviderFor(LoginViewModel)
-const loginViewModelProvider = LoginViewModelProvider._();
+@ProviderFor(HomeViewModel)
+const homeViewModelProvider = HomeViewModelProvider._();
 
-final class LoginViewModelProvider
-    extends $NotifierProvider<LoginViewModel, LoginForm> {
-  const LoginViewModelProvider._()
+final class HomeViewModelProvider
+    extends $NotifierProvider<HomeViewModel, List<Todo>> {
+  const HomeViewModelProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'loginViewModelProvider',
+        name: r'homeViewModelProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$loginViewModelHash();
+  String debugGetCreateSourceHash() => _$homeViewModelHash();
 
   @$internal
   @override
-  LoginViewModel create() => LoginViewModel();
+  HomeViewModel create() => HomeViewModel();
 
   @$internal
   @override
-  $NotifierProviderElement<LoginViewModel, LoginForm> $createElement(
+  $NotifierProviderElement<HomeViewModel, List<Todo>> $createElement(
     $ProviderPointer pointer,
   ) => $NotifierProviderElement(pointer);
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(LoginForm value) {
+  Override overrideWithValue(List<Todo> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $ValueProvider<LoginForm>(value),
+      providerOverride: $ValueProvider<List<Todo>>(value),
     );
   }
 }
 
-String _$loginViewModelHash() => r'19753e1f488147246a012757cee9687e4d612551';
+String _$homeViewModelHash() => r'fc6badbfab489cb175a18656c6a69d0ad723c5b7';
 
-abstract class _$LoginViewModel extends $Notifier<LoginForm> {
-  LoginForm build();
+abstract class _$HomeViewModel extends $Notifier<List<Todo>> {
+  List<Todo> build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<LoginForm>;
+    final ref = this.ref as $Ref<List<Todo>>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<LoginForm>,
-              LoginForm,
+              AnyNotifier<List<Todo>>,
+              List<Todo>,
               Object?,
               Object?
             >;
