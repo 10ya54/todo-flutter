@@ -17,7 +17,6 @@ class LoginViewModel extends _$LoginViewModel {
     print(
       'Logging in with email: ${form.email} and password: ${form.password}',
     );
-    await Future.delayed(const Duration(seconds: 2));
     return Result.ok(null);
   }
 }

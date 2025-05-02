@@ -10,7 +10,7 @@ part of 'home_viewmodel.dart';
 const homeViewModelProvider = HomeViewModelProvider._();
 
 final class HomeViewModelProvider
-    extends $NotifierProvider<HomeViewModel, List<Todo>> {
+    extends $AsyncNotifierProvider<HomeViewModel, List<Todo>> {
   const HomeViewModelProvider._()
     : super(
         from: null,
@@ -31,33 +31,25 @@ final class HomeViewModelProvider
 
   @$internal
   @override
-  $NotifierProviderElement<HomeViewModel, List<Todo>> $createElement(
+  $AsyncNotifierProviderElement<HomeViewModel, List<Todo>> $createElement(
     $ProviderPointer pointer,
-  ) => $NotifierProviderElement(pointer);
-
-  /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(List<Todo> value) {
-    return $ProviderOverride(
-      origin: this,
-      providerOverride: $ValueProvider<List<Todo>>(value),
-    );
-  }
+  ) => $AsyncNotifierProviderElement(pointer);
 }
 
-String _$homeViewModelHash() => r'fc6badbfab489cb175a18656c6a69d0ad723c5b7';
+String _$homeViewModelHash() => r'ce83c34e7f7c1610065de515e90c37249137b8ce';
 
-abstract class _$HomeViewModel extends $Notifier<List<Todo>> {
-  List<Todo> build();
+abstract class _$HomeViewModel extends $AsyncNotifier<List<Todo>> {
+  FutureOr<List<Todo>> build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<List<Todo>>;
+    final ref = this.ref as $Ref<AsyncValue<List<Todo>>>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<List<Todo>>,
-              List<Todo>,
+              AnyNotifier<AsyncValue<List<Todo>>>,
+              AsyncValue<List<Todo>>,
               Object?,
               Object?
             >;

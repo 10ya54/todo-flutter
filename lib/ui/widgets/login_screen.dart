@@ -6,9 +6,7 @@ import 'package:todoflutter/ui/form/login_form.dart';
 import 'package:todoflutter/ui/view_model/login_viewmodel.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
-  const LoginScreen({super.key, required this.viewModel});
-
-  final LoginViewModel viewModel;
+  const LoginScreen({super.key});
 
   @override
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
@@ -28,6 +26,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // final loginViewModel = ref.watch(loginViewModelProvider);
+    final loginNotifier = ref.read(loginViewModelProvider.notifier);
+
     return Scaffold(
       appBar: AppBar(title: const Text('ログイン画面')),
       body: SafeArea(
@@ -77,7 +78,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         return;
                       } else {
                         // ログイン処理を実行
-                        widget.viewModel.login(
+                        loginNotifier.login(
                           LoginForm(
                             email: emailController.text,
                             password: passwordController.text,

@@ -6,11 +6,9 @@ part 'todo.g.dart';
 @freezed
 abstract class Todo with _$Todo {
   const factory Todo({
-    required String id,
+    required int userId,
+    required int id,
     required String title,
-    required String description,
-    required DateTime dueDate,
-    required String category,
     @Default(false) bool isCompleted,
   }) = _Todo;
 
