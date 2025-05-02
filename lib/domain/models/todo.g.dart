@@ -7,19 +7,15 @@ part of 'todo.dart';
 // **************************************************************************
 
 _Todo _$TodoFromJson(Map<String, dynamic> json) => _Todo(
-  id: json['id'] as String,
+  userId: (json['userId'] as num).toInt(),
+  id: (json['id'] as num).toInt(),
   title: json['title'] as String,
-  description: json['description'] as String,
-  dueDate: DateTime.parse(json['dueDate'] as String),
-  category: json['category'] as String,
   isCompleted: json['isCompleted'] as bool? ?? false,
 );
 
 Map<String, dynamic> _$TodoToJson(_Todo instance) => <String, dynamic>{
+  'userId': instance.userId,
   'id': instance.id,
   'title': instance.title,
-  'description': instance.description,
-  'dueDate': instance.dueDate.toIso8601String(),
-  'category': instance.category,
   'isCompleted': instance.isCompleted,
 };
